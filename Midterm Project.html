@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5500/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midterm Project</title>
+
+<!-- Google Fonts -->
+<link href="./Midterm Project_files/css2" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="./Midterm Project_files/reset.css">
+<link rel="stylesheet" href="./Midterm Project_files/main.css">
+</head>
+<body>
+
+<!-- Skip link -->
+<a href="http://127.0.0.1:5500/#main" class="skip-link">Skip to main content</a>
+
+<!-- Header -->
+<header>
+<div class="wrapper">
+<h1>Site Title</h1>
+<nav>
+<ul>
+<li><a href="http://127.0.0.1:5500/#about">About</a></li>
+<li><a href="http://127.0.0.1:5500/#features">Features</a></li>
+<li><a href="http://127.0.0.1:5500/#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<!-- Main Content -->
+<main id="main">
+
+<section class="hero">
+<h1>Welcome to Our Coffee Shop</h1>
+<p>We craft every cup with love, care, and the finest beans.</p>
+<a href="http://127.0.0.1:5500/#" class="btn">Learn More</a>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about">
+<div class="wrapper">
+<img src="./Midterm Project_files/about-us.jpeg" alt="About our coffee shop">
+<div>
+<h2>About Us</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent condimentum.</p>
+</div>
+</div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+<div class="wrapper">
+<div class="feature-item">
+<img src="./Midterm Project_files/coffee-beans.jpeg" alt="Coffee Beans">
+<h3>Fresh Beans</h3>
+</div>
+<div class="feature-item">
+<img src="./Midterm Project_files/pouring-coffee.jpeg" alt="Pouring Coffee">
+<h3>Perfect Brew</h3>
+</div>
+<div class="feature-item">
+<img src="./Midterm Project_files/three-cups.jpeg" alt="Three Coffee Cups">
+<h3>Delicious Variety</h3>
+</div>
+</div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+<div class="wrapper">
+<div class="testimonial">
+<img src="./Midterm Project_files/testimonial-1.jpeg" alt="Happy customer 1">
+<p>“Best coffee I’ve ever had!”</p>
+</div>
+<div class="testimonial">
+<img src="./Midterm Project_files/testimonial-2.jpeg" alt="Happy customer 2">
+<p>“Amazing ambiance and great service.”</p>
+</div>
+<div class="testimonial">
+<img src="./Midterm Project_files/testimonial-3.jpeg" alt="Happy customer 3">
+<p>“I come here every morning!”</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrapper">
+<p>© 2025 Ikrame</p>
+</div>
+</footer>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
