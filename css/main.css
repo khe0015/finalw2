@@ -1,396 +1,152 @@
-:root {
-
-  --bg-color: #f3f0e9;
-
-  --text-dark: #000000;
-
-  --text-light: #ffffff;
-
-  --gold: #d69e3d;
-
-  --gold-dark: #966f2c;
-
-
-
-  --heading-font: 'Lato', sans-serif;
-
-  --body-font: 'Karla', sans-serif;
-
-}
-
-
-
 body {
-
-  font-family: var(--body-font);
-
-  background-color: var(--bg-color);
-
-  color: var(--text-dark);
-
-  font-size: 1rem;
-
-  line-height: 1.6;
-
   margin: 0;
-
-  padding: 0;
-
+  font-family: Arial, sans-serif;
+  color: white;
 }
-
-
-
-.wrapper {
-
-  max-width: 1200px;
-
-  margin: 0 auto;
-
-  padding: 1em;
-
-}
-
-
-
-h1, h2, h3 {
-
-  font-family: var(--heading-font);
-
-  font-weight: 700;
-
-}
-
-
-
-h1 { font-size: 2rem; }
-
-h2 { font-size: 1.75rem; }
-
-h3 { font-size: 1.375rem; }
-
-
-
-p {
-
-  font-family: var(--body-font);
-
-  font-size: 1rem;
-
-}
-
-
-
-img {
-
-  max-width: 100%;
-
-  height: auto;
-
-  display: block;
-
-  border-radius: 5px;
-
-  margin-top: 1em;
-
-}
-
-
-
-nav ul {
-
-  list-style: none;
-
-  padding: 0;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 0.5rem;
-
-  align-items: center;
-
-}
-
-
-
-nav a {
-
-  text-decoration: none;
-
-  color: var(--text-dark);
-
-  font-family: var(--heading-font);
-
-  font-weight: 700;
-
-}
-
-
-
-nav a:hover,
-
-nav a:focus {
-
-  color: var(--gold);
-
-  transition: color 0.3s ease;
-
-}
-
-.btn {
-
-  display: inline-block;
-
-  background-color: var(--gold);
-
-  color: var(--text-light);
-
-  padding: 0.75rem 1.25rem;
-
-  border: none;
-
-  cursor: pointer;
-
-  font-family: var(--body-font);
-
-  transition: background-color 0.3s ease;
-
-  text-decoration: none;
-
-  font-weight: bold;
-
-  border-radius: 5px;
-
-}
-
-
-
-.btn:hover,
-
-.btn:focus {
-
-  background-color: var(--gold-dark);
-
-}
-
-
 
 .hero {
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
-  min-height: 100vh;
-
-  text-align: center;
-
-  background-image: url("../images/hero-background.jpg");
-
+  background-image: url('../images/hero-background.jpg');
   background-size: cover;
-
   background-position: center;
-
-  background-repeat: no-repeat;
-
-  color: white;
-
-  padding: 2rem;
-
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
 
-.hero h1,
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
 
 .hero p {
-
-  margin-bottom: 1rem;
-
-  font-family: var(--heading-font);
-
+  font-size: 1.1rem;
+  margin-bottom: 30px;
 }
 
-
-
-.hero h2 {
-
-  animation: fadeIn 2s ease-in-out;
-
+.hero-btn {
+  background-color: white;
+  color: black;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
-
-
-@keyframes fadeIn {
-
-  from {
-
-    opacity: 0;
-
-    transform: translateY(20px);
-
-  }
-
-  to {
-
-    opacity: 1;
-
-    transform: translateY(0);
-
-  }
-
+.site-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000;
+  background: transparent;
+  color: white;
 }
 
-
-
-@media (min-width: 768px) {
-
-  h1 { font-size: 3rem; }
-
-  h2 { font-size: 2.375rem; }
-
-  h3 { font-size: 1.75rem; }
-
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
 }
 
-
-
-@media (min-width: 1024px) {
-
-  h1 { font-size: 3.875rem; }
-
-  h2 { font-size: 3rem; }
-
-  h3 { font-size: 2rem; }
-
-
-
-  nav ul {
-
-    flex-direction: row;
-
-    justify-content: center;
-
-  }
-
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.about .wrapper {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 2rem;
-padding: 2rem 1rem;
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
-.about img {
-max-width: 100%;
-border-radius: 8px;
+.site-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
-.about div {
-text-align: center;
+.site-nav a:hover {
+  text-decoration: underline;
 }
 
-@media (min-width: 768px) {
-.about .wrapper {
-flex-direction: row;
-align-items: flex-start;
-text-align: left;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-.about img {
-width: 50%;
+.hero {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
 }
 
-.about div {
-width: 50%;
-}
-}
-
-<section id="features" class="features">
-<div class="wrapper">
-<div class="feature-item">
-<img src="images/coffee-beans.jpeg" alt="Coffee Beans" />
-<h3>Fresh Beans</h3>
-</div>
-<div class="feature-item">
-<img src="images/pouring-coffee.jpeg" alt="Pouring Coffee" />
-<h3>Perfect Brew</h3>
-</div>
-<div class="feature-item">
-<img src="images/three-cups.jpeg" alt="Three Coffee Cups" />
-<h3>Delicious Variety</h3>
-</div>
-</div>
-</section>
-
-.features .wrapper {
-display: grid;
-grid-template-columns: 1fr;
-gap: 2rem;
-padding: 2rem 1rem;
-text-align: center;
+.hero-text {
+  margin-bottom: 30px;
 }
 
-.feature-item img {
-max-width: 100%;
-border-radius: 8px;
-margin-bottom: 1rem;
+.subheading {
+  color: #b87333;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
-.feature-item h3 {
-font-family: var(--heading-font);
-font-size: 1.5rem;
-color: var(--text-dark);
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin: 0;
 }
 
-/* Responsive pour tablette et desktop */
-@media (min-width: 768px) {
-.features .wrapper {
-grid-template-columns: repeat(3, 1fr);
-text-align: left;
+.hero-images {
+  display: flex;
+  gap: 20px;
 }
 
-.feature-item {
-padding: 1rem;
-}
-}
-
-.testimonials {
-background-color: var(--gold);
-color: var(--text-light);
-padding: 4rem 1rem;
-text-align: center;
+.large-img {
+  flex: 1;
 }
 
-.testimonials .wrapper {
-display: grid;
-grid-template-columns: 1fr;
-gap: 2rem;
+.large-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.testimonial img {
-width: 100px;
-height: 100px;
-object-fit: cover;
-border-radius: 50%;
-margin-bottom: 1rem;
+.small-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  flex: 1;
 }
 
-.testimonial p {
-font-style: italic;
-font-size: 1.125rem;
-}
-
-/* Responsive: 3 en ligne */
-@media (min-width: 768px) {
-.testimonials .wrapper {
-grid-template-columns: repeat(3, 1fr);
-}
+.small-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
 }

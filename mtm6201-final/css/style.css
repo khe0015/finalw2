@@ -1,0 +1,124 @@
+/* ========== VARIABLES (couleurs & thèmes) ========== */
+:root{
+  --bs-primary:#7a1f2b;      /* bordeaux */
+  --bs-secondary:#c5b895;    /* beige sable clair */
+  --bs-body-bg:#f7f4ec;      /* crème */
+  --bs-body-color:#1f1f1f;   /* texte */
+}
+
+/* Corps & typographie de base */
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--bs-body-bg);
+  color:var(--bs-body-color);
+}
+
+/* Désactive le clic sur le bouton actif de la nav (visuel seulement) */
+.navbar .btn.active { pointer-events:none; }
+
+/* ========== ACCESSIBILITÉ ========== */
+/* Skip link accessible (Tab au chargement) */
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  position:fixed; left:1rem; top:1rem; z-index:1050;
+  background:var(--bs-primary); color:#fff; padding:.5rem .75rem; border-radius:.25rem;
+}
+
+/* Focus visible pour liens & boutons */
+a, .btn{ transition: all .2s ease-in-out; }
+a:focus-visible, .btn:focus-visible{
+  outline: 2px dashed var(--bs-primary);
+  outline-offset: 2px;
+}
+.btn-primary:hover{ transform: translateY(-2px); }
+
+/* ========== HERO (HOME) ========== */
+/* Section plein écran avec image de fond + overlay + boîte “verre” */
+.hero-bleed{
+  min-height: 80vh;
+  /* 👉 Remplace le nom du fichier ci‑dessous par ta grande image de page d’accueil */
+  background: url("../images/hero-1600.jpg") center/cover no-repeat; /* ← CHANGER ICI */
+  position: relative;
+}
+.hero-bleed::before{
+  content:""; position:absolute; inset:0; background: rgba(0,0,0,.35); /* overlay sombre */
+}
+.hero-bleed > .container{ position: relative; z-index: 1; }
+
+/* Boîte style “glass” pour le texte de mission */
+.glass{
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(4px);
+  border-radius: .75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* ========== ABOUT (cercle image) ========== */
+.about-circle{
+  width: clamp(220px, 45vw, 520px);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--bs-secondary);
+  display: grid; place-items:center;
+  overflow:hidden;
+}
+.about-circle img{
+  width:100%; height:100%; object-fit: cover;
+  /* Si tu veux forcer une image spécifique ici, tu peux aussi utiliser background-image
+     au lieu d’un <img>. Dans ce cas :
+     .about-circle{ background: url("../images/group-800.jpg") center/cover no-repeat; } 
+     et supprime le <img> du HTML. */
+}
+
+/* ========== CONTACT (bande avec vague douce) ========== */
+.contact-hero{
+  /* Dégradé léger + fond crème */
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgba(0,0,0,.08), transparent 60%),
+    linear-gradient(0deg, #efe9db, #efe9db);
+}
+
+/* ========== COMPOSANTS GÉNÉRAUX ========== */
+.card{
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,.04);
+}
+.card-title{ letter-spacing:.02em; }
+
+/* Liens du footer */
+footer a.link-light{
+  text-decoration: none;
+}
+footer a.link-light:hover{ opacity:.8; }
+
+/* ========== UTILITAIRES RESPONSIVE ========== */
+/* Gros padding sur desktop quand tu veux “respirer” */
+@media (min-width: 992px){
+  .py-lg-6{ padding-top:6rem!important; padding-bottom:6rem!important; }
+}
+
+/* ========== IMAGES RESPONSIVES (optionnel mais utile) ========== */
+/* Bords arrondis doux sur toutes les images (cohérence visuelle) */
+picture img, img.img-fluid{
+  border-radius:.5rem;
+}
+
+/* ========== ASTUCES: où changer les images ========== */
+/*
+1) Image de HERO (Home) : dans ce fichier, section .hero-bleed → background url(...).
+   - Remplace hero-1600.jpg par ta grande image (ex: accueil-1600.jpg).
+
+2) Images des cartes “Projets” (Home) : dans index.html,
+   - remplace images/proj1-800.jpg, proj2-800.jpg, proj3-800.jpg par tes vrais noms.
+
+3) Image ronde (About) : dans about.html,
+   - <img src="images/group-800.jpg" ...> → remplace group-800.jpg par ton fichier.
+
+4) Carte (Contact) : dans contact.html,
+   - <source srcset="images/map-1600.jpg" ...> et <img src="images/map-800.jpg" ...>
+   - remplace map-1600.jpg & map-800.jpg par tes fichiers.
+
+⚠ Les noms doivent correspondre EXACTEMENT à ceux présents dans le dossier /images (majuscules/minuscules).
+*/

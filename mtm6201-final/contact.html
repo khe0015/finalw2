@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – Active Life Centre</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:#f7f4ec;
+    --beige:#e9dfc2;        /* bande beige clair */
+    --beige-dark:#d7c89f;   /* séparateurs/sections */
+    --text:#1f1f1f;
+    --accent:#7a1f2b;       /* bordeaux (si besoin) */
+    --heading:#b7a76a;      /* doré pâle du titre "Contact Us" */
+  }
+  body{background:var(--cream);color:var(--text)}
+
+  /* Barre top beige avec nav droite */
+  .topbar{background:var(--beige); font-weight:600}
+  .topbar a{color:#000; text-decoration:none}
+  .topbar .nav-link{padding:0 .75rem}
+  .pill{background:#000;color:#fff;border-radius:999px;padding:.25rem .8rem}
+
+  /* Bande image + titre centré */
+  .hero-contact{
+    position:relative;
+    height:260px;
+    background: url("image/contactus.jpg") center/cover no-repeat;
+  }
+  .hero-contact h1{
+    position:absolute; inset:0;
+    display:grid; place-items:center;
+    margin:0; font-weight:800; letter-spacing:.02em;
+    color:var(--heading); /* texte doré pâle comme sur ta maquette */
+    font-size:clamp(28px, 4vw, 40px);
+    text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  }
+
+  /* Séparateurs beige (traits pleins sur toute la largeur) */
+  .sep{height:12px;background:var(--beige-dark)}
+
+  /* Carte d'infos (adresse/tel/mail) en fond blanc avec bord doux */
+  .info-card{
+    background:#fff; border-radius:10px; padding:18px 22px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  }
+
+  /* Titre "Let's Connect!" doré */
+  .connect-title{
+    color:var(--heading); font-weight:800; font-size:1.4rem; margin-bottom:.5rem;
+  }
+
+  /* Titre "OUR LOCATION" centré avec trait beige au-dessus */
+  .location-title-wrap{background:var(--beige-dark); padding-block:12px}
+  .location-title{
+    font-weight:800; letter-spacing:.06em; text-transform:uppercase; text-align:center;
+  }
+
+  /* Grand panneau beige final */
+  .beige-panel{background:var(--beige-dark); padding:32px; border-radius:6px}
+
+  /* Petites icônes avec emoji = on laisse tel quel (facile) */
+  .list-unstyled li{margin:.25rem 0}
+
+  /* Images */
+  .rounded-img{border-radius:8px}
+
+  @media (min-width:992px){
+    .info-card{padding:20px 28px}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar py-2">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="fw-bold">Active Life Centre</div>
+    <nav class="d-flex align-items-center gap-3">
+      <a class="nav-link p-0" href="index.html">Home</a>
+      <a class="nav-link p-0" href="about.html">About</a>
+      <a class="nav-link p-0 pill" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO IMAGE + TITLE -->
+<section class="hero-contact">
+  <h1>Contact Us</h1>
+</section>
+
+<!-- SEPARATEUR -->
+<div class="sep"></div>
+
+<!-- ADRESSE / TEL / EMAIL (style carte blanche) -->
+<section class="py-4">
+  <div class="container">
+    <div class="info-card">
+      <p class="mb-2">📍 125 Walnness Avenue, Ottawa, QC</p>
+      <p class="mb-2">📞 +1 (514) 123‑4567</p>
+      <p class="mb-0">✉ support@life.ON</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEPARATEUR -->
+<div class="sep"></div>
+
+<!-- LET'S CONNECT (image à gauche, texte + bouton à droite) -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-5">
+        <img src="image/connect.jpg" alt="Connect" class="img-fluid rounded-img">
+      </div>
+      <div class="col-md-7">
+        <h3 class="connect-title">Let’s Connect!</h3>
+        <p class="mb-3">We’d love to hear from you! Whether you have questions, need more information about our programs, or want to sign up, our team is here to help.</p>
+        <button class="btn btn-dark btn-sm">Send</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOC TITRE OUR LOCATION -->
+<div class="location-title-wrap">
+  <div class="container">
+    <h3 class="location-title m-0">OUR LOCATION</h3>
+  </div>
+</div>
+
+<!-- CARTE -->
+<section class="py-4">
+  <div class="container">
+    <img src="image/location.jpg" alt="Map" class="img-fluid rounded-img">
+  </div>
+</section>
+
+<!-- GRAND PANNEAU BEIGE : Our Location & Hours -->
+<section class="pb-5">
+  <div class="container">
+    <div class="beige-panel">
+      <h4 class="fw-bold mb-3">🏠 Our Location & Hours:</h4>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <ul class="list-unstyled mb-0">
+            <li>📍 125 Walnness Avenue, Ottawa, QC</li>
+            <li>📞 +1 (514) 123‑4567</li>
+            <li>✉ support@econofitness.ca</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <p class="mb-1">🕒 <strong>Opening Hours:</strong></p>
+          <ul class="list-unstyled mb-0">
+            <li>Monday – Friday: 8:00 AM – 10:00 PM</li>
+            <li>Saturday – Sunday: 9:00 AM – 8:00 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center mt-3 mb-0" style="opacity:.8;">Visit or Contact Us Directly</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
